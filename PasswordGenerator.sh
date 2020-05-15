@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#Simple Password Generator 
-
 echo "This is a simple password generator"
 echo "Please enter the length of the password: "
 read PASS_LENGTH
