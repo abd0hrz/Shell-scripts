@@ -1,7 +1,6 @@
 #!/bin/bash
 # Stop the script if any step fails
 set -eo pipefail
-
 repo=$1
 file=$2
 
