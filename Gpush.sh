@@ -1,5 +1,5 @@
 #!/bin/bash
-# stop script if any step fails
+# Stop the script if any step fails
 set -eo pipefail
 
 repo=$1
