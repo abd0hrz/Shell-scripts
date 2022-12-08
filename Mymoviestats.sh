@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=myanimestats.txt
+file=mymoviestats.txt
 username=$(sed 1!d $file)
 gender=$(sed 2!d $file)
 red='\e[31m'
@@ -72,12 +72,12 @@ then
 	color2_awk="$cian_awk"
 fi
 
-now_watching=$(awk -F'|' '$2~/^w/' animes.txt | awk -v color1_awk="$color1_awk" -F'|' '{print color1_awk" "$1}')
-count_watching=$(awk -F'|' '$2~/^w/' animes.txt | wc -l)
-count_plan_to_watch=$(awk -F'|' '$2~/^p/' animes.txt | wc -l)
-count_on_hold=$(awk -F'|' '$2~/^h/' animes.txt | wc -l)
-count_dropped=$(awk -F'|' '$2~/^d/' animes.txt | wc -l)
-count_completed=$(awk -F'|' '$2~/^c/' animes.txt | wc -l)
+now_watching=$(awk -F'|' '$2~/^w/' movies.txt | awk -v color1_awk="$color1_awk" -F'|' '{print color1_awk" "$1}')
+count_watching=$(awk -F'|' '$2~/^w/' movies.txt | wc -l)
+count_plan_to_watch=$(awk -F'|' '$2~/^p/' movies.txt | wc -l)
+count_on_hold=$(awk -F'|' '$2~/^h/' movies.txt | wc -l)
+count_dropped=$(awk -F'|' '$2~/^d/' movies.txt | wc -l)
+count_completed=$(awk -F'|' '$2~/^c/' movies.txt | wc -l)
 count_total=$(($count_completed + $count_watching + $count_on_hold + $count_dropped + $count_plan_to_watch))
 
 function stats(){
@@ -85,7 +85,7 @@ function stats(){
 	echo " "
 	echo -e "$color1 Weeb name:$color2 $username$color1-chan    "
 	echo -e "$color2 Gender:$color1 $gender"
-	echo -e "$color1 Total animes:$color2 $count_total"
+	echo -e "$color1 Total movies:$color2 $count_total"
 	echo -e "$color2 Watching:$color1 $count_watching"
 	echo -e "$color1 Completed:$color2 $count_completed$color1"
 	echo -e "$color2 On hold:$color1 $count_on_hold"
