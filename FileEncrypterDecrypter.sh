@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 echo "This is a simple file encrypter/decrypter"
 echo "Please choose what you want to do"
 
