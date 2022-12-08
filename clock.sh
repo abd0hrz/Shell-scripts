@@ -5,6 +5,7 @@ hours=("zero" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine" "te
 hour=$(date +'%I')
 minute=$(date +'%M')
 
+
 # strips leading zero to prevent octal number assumption
 hour=$(( "10#$hour" ))
 minute=$(( "10#$minute" ))
